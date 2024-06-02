@@ -5,47 +5,78 @@
     padding: 0;
 }
 
+#Nome_logo{
+    text-align: center;
+    color: #000;
+    font-size: larger;
+}
+#titulo {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 50px;
+    color: black;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    margin-left: 200px;
+    margin-right: 15px;
+    text-align: left;
+}
+
+
 /* Barra lateral fixa à direita */
-.sidebar {
+.barra_lateral {
     position: fixed;
     top: 0;
-    right: 0;
-    width: 200px;
+    left: 0;
+    width: 150px;
     height: 100%;
-    background-color: #f4f4f4;
+    background-color: #3CB371;
     padding: 20px;
     box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+    z-index: 100; /* Garante que a barra lateral esteja acima de outros elementos */
+    overflow-y: auto; /* Adiciona rolagem se necessário */
 }
 
 /* Estilização da barra lateral */
-.sidebar ul {
+.barra_lateral ul {
     list-style-type: none;
     padding: 0;
 }
 
-.sidebar ul li {
+.barra_lateral ul li {
     margin-bottom: 10px;
 }
 
-.sidebar ul li a {
+.barra_lateral ul li a {
     text-decoration: none;
     color: #333;
     display: block;
     padding: 8px;
     border-radius: 4px;
     transition: background-color 0.3s;
+    font-size: 20px; /* Aumenta o tamanho da fonte para 20 pixels */
+    font-weight: bold; /* Torna o texto em negrito */
 }
 
-.sidebar ul li a:hover {
+.barra_lateral ul li a:hover {
     background-color: #ddd;
 }
 
-/* Estilização da imagem do topo */
-#Imagem_Topo {
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 10px;
+
+
+/* Estilização da imagem da logo */
+#Imagem_Logo {
     background-color: #00FF7F;
     text-align: center;
+    margin-left: 150px;
+}
+
+/* Estilização da imagem_1 */
+#Imagem_1 {
+    width: 100%; /* Faz a imagem ocupar toda a largura disponível */
+    display: block; /* Garante que a imagem se comporte como um bloco */
+    text-align: right;
+    margin-left: 0; /* Remove qualquer margem à esquerda */
+    margin-right: 0; /* Remove qualquer margem à direita */
 }
 
 /* Estilização dos parágrafos */
@@ -55,7 +86,7 @@ p {
     color: #000;
     margin-top: 15px;
     padding-bottom: 10px;
-    margin-left: 20px;
+    margin-left: 200px;
     padding-right: 15px;
     text-align: justify;
 }
@@ -67,128 +98,72 @@ h1 {
     color: #006400;
     margin-top: 20px;
     margin-bottom: 10px;
-    margin-left: 20px;
+    margin-left: 200px;
     margin-right: 15px;
     text-align: left;
 }
-
-/* Estilização básica da tabela */
-table ul {
-    width: 90%;
-    border-collapse: collapse;
-    font-family: Arial, sans-serif;
-    margin-bottom: 10px;
-    margin-left: 20px;
-    margin-right: 15px;
+/* Estilização da lista com o ID "lista_1" */
+#lista_1 {
+    padding: 0; /* Remove o preenchimento padrão */
+    margin-left: 220px; /* Adiciona margem à esquerda para acomodar a barra lateral */
 }
 
-/* Estilização das células de cabeçalho */
-.styled-table th {
-    background-color: #f2f2f2;
-    color: #333;
-    text-align: left;
-    padding: 12px;
-    border-bottom: 2px solid #ddd;
+#lista_1 {
+    margin-bottom: 10px; /* Espaçamento entre os itens da lista */
+    font-size: 16px; /* Tamanho da fonte */
+    color: #333; /* Cor do texto */
 }
 
-/* Estilização das células de dados */
-.styled-table td {
-    padding: 12px;
-    border-bottom: 1px solid #ddd;
+#lista_1 li:hover {
+    background-color: #f0f0f0; /* Cor de fundo quando o item da lista é hover */
 }
 
-/* Estilização das linhas de dados */
-.styled-table tbody tr {
-    background-color: #fff;
-}
-
-/* Estilização das linhas alternadas */
-.styled-table tbody tr:nth-child(even) {
-    background-color: #f9f9f9;
-}
-
-/* Estilização do hover nas linhas */
-.styled-table tbody tr:hover {
-    background-color: #f1f1f1;
-}
-
-/* Estilização das bordas da tabela */
-.styled-table, .styled-table th, .styled-table td {
-    border: 1px solid #ddd;
-}
-
-/* Fonte da tabela */
-.styled-table {
-    font-size: 14px;
-}
-
-/* Estilização básica para listas */
-.styled-list {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-}
-
-/* Estilização dos itens da lista */
-.styled-list li {
-    padding: 10px 15px;
-    margin-bottom: 5px;
-    background-color: #f2f2f2;
-    border: 1px solid #ddd;
+/* Exemplo: definindo uma borda ao redor dos itens da lista */
+#lista_1 li {
+    border: 1px solid #ccc;
+    padding: 8px;
     border-radius: 4px;
 }
 
-/* Estilização do hover nos itens da lista */
-.styled-list li:hover {
-    background-color: #e9e9e9;
-    cursor: pointer;
+/* Estilização da lista com o ID "lista_2" */
+#lista_2 {
+    padding: 0; /* Remove o preenchimento padrão */
+    margin-left: 220px; /* Adiciona margem à esquerda para acomodar a barra lateral */
 }
 
-/* Estilização para listas ordenadas */
-ol.styled-list {
-    counter-reset: list-counter;
+#lista_2 {
+    margin-bottom: 10px; /* Espaçamento entre os itens da lista */
+    font-size: 16px; /* Tamanho da fonte */
+    color: #333; /* Cor do texto */
 }
 
-ol.styled-list li {
-    counter-increment: list-counter;
-    position: relative;
+#lista_2 li:hover {
+    background-color: #f0f0f0; /* Cor de fundo quando o item da lista é hover */
 }
 
-ol.styled-list li::before {
-    content: counter(list-counter) ". ";
-    position: absolute;
-    left: -2em;
-    color: #333;
-    font-weight: bold;
+/* Exemplo: definindo uma borda ao redor dos itens da lista */
+#lista_2 li {
+    border: 1px solid #ccc;
+    padding: 8px;
+    border-radius: 4px;
 }
 
-/* Estilização para listas não ordenadas */
-ul.styled-list li::before {
-    content: "• ";
-    color: #333;
-    font-weight: bold;
-    margin-right: 10px;
+#instagram{
+    background-color: #00FF7F;
+    text-align: center;
+    margin-left: 300px;
+}
+
+#whatsapp{
+    background-color: #00FF7F;
+    text-align: center;
+    margin-left: 200px;
 }
 
 /* Estilização do rodapé */
 footer {
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 10px;
+    font-size: 50px;
     background-color: #00FF7F;
     text-align: center;
-}
-
-/* Estilização do conteúdo principal */
-.content {
-    margin-right: 220px; /* Espaço para a barra lateral */
-    padding: 20px;
-}
-
-.content section {
-    margin-bottom: 40px;
-}
-
-.content img {
-    max-width: 100%;
-    height: auto;
 }

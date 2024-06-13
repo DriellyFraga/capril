@@ -88,38 +88,73 @@
     margin-left: 150px;
 }
 
+
+#leite-de-cabra{
+    border-left: 0px;
+    margin-left: px;
+}
+/* Container principal */
 .content {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
-   
+    margin-left: 150px; /* Largura da barra lateral */
+    width: calc(100% - 150px); /* Subtrai a largura da barra lateral */
 }
-    
-.coluna_imagem {
-    width: 80%; /* Ocupa 60% da largura disponível */
-    padding: 1px;
-    box-sizing: border-box;
-}
-        
-.coluna_imagem img {
-    width: 100%; /* A imagem ocupa toda a largura da coluna */
-    height: auto; /* Mantém a proporção da imagem */
-    margin-left: 60px;
-    margin-top: 25px;
-}
-        
+
+
+/* Estilos para as colunas de imagem e texto */
+.coluna_imagem,
 .coluna_texto {
-    width: 60%; /* Ocupa 40% da largura disponível */
+    box-sizing: border-box;
+    
+}
+
+/* Configuração da coluna de imagem */
+.coluna_imagem {
+    flex: 0 0 50%; /* Ocupa 50% do espaço disponível */
+}
+
+/* Ajuste de imagem */
+.coluna_imagem img {
+    width: 100%;
+    height: auto;
+}
+
+/* Configuração da coluna de texto */
+.coluna_texto {
+    flex: 0 0 50%; /* Ocupa 50% do espaço disponível */
     font-family: Arial, Helvetica, sans-serif;
     font-size: 18px;
     color: #000;
-    margin-top: 0;
-    padding-bottom: 10px;
-    padding-left: 10px;
-    margin-left: -120px;
-    padding-right: 0;
-    text-align: left; 
-}  
-        
+    text-align: left;
+    padding: 0px;
+    margin: 0px;
+   
+}
+
+
+/* Media Queries para ajustar o layout em dispositivos menores */
+@media (max-width: 768px) {
+    .coluna_imagem, .coluna_texto {
+        flex: 1 1 100%; /* Ocupa 100% do espaço disponível em telas menores */
+    }
+    
+    .coluna_imagem {
+        order: 1; /* Ordem da imagem */
+    }
+    
+    .coluna_texto {
+        order: 2; /* Ordem do texto */
+    }
+    
+    .content {
+        margin-left: 0; /* Remove a margem esquerda em telas menores */
+    }
+}
+
+
+     
 h2 {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 22px;

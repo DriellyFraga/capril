@@ -91,28 +91,30 @@
 
 #leite-de-cabra{
     border-left: 0px;
-    margin-left: px;
-}
-/* Container principal */
-.content {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    margin-left: 150px; /* Largura da barra lateral */
-    width: calc(100% - 150px); /* Subtrai a largura da barra lateral */
+    margin-left: 0px;
+    margin-top: 0px;
+    padding-top: 0px;
 }
 
+/* Container principal */
+.content {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 10px;
+    margin-left: 150px; /* Largura da barra lateral */
+    width: calc(100% - 150px); /* Subtrai a largura da barra lateral */
+    padding-right: 0px; /* Garante borda lateral direita de 5px */
+}
 
 /* Estilos para as colunas de imagem e texto */
 .coluna_imagem,
 .coluna_texto {
     box-sizing: border-box;
-    
 }
 
 /* Configuração da coluna de imagem */
 .coluna_imagem {
-    flex: 0 0 50%; /* Ocupa 50% do espaço disponível */
+    grid-column: 1;
 }
 
 /* Ajuste de imagem */
@@ -123,48 +125,62 @@
 
 /* Configuração da coluna de texto */
 .coluna_texto {
-    flex: 0 0 50%; /* Ocupa 50% do espaço disponível */
+    grid-column: 2;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 18px;
     color: #000;
     text-align: left;
     padding: 0px;
     margin: 0px;
-   
+    margin-right: 26px;
 }
 
-
 /* Media Queries para ajustar o layout em dispositivos menores */
-@media (max-width: 768px) {
-    .coluna_imagem, .coluna_texto {
-        flex: 1 1 100%; /* Ocupa 100% do espaço disponível em telas menores */
+@media (max-width: 1000px) {
+    .content {
+        grid-template-columns: 1fr;
+        margin-left: 0; /* Remove a margem esquerda em telas menores */
+        padding-left: 210px; /* Adiciona padding para respeitar a barra lateral fixa */
+       
     }
     
     .coluna_imagem {
+        grid-column: 1;
         order: 1; /* Ordem da imagem */
+        padding-right: 0px; 
+        margin-right: 87px;
     }
     
     .coluna_texto {
+        grid-column: 1;
         order: 2; /* Ordem do texto */
-    }
-    
-    .content {
-        margin-left: 0; /* Remove a margem esquerda em telas menores */
+        padding-right: 0px; 
+        margin-right: 87px;
     }
 }
 
+/* Estilos específicos para elementos dentro de .coluna_texto */
+.coluna_texto h1 {
+    margin-left: 1px;
+    padding: 0px;
+}
 
-     
-h2 {
+.coluna_texto h2 {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 22px;
     color: #000;
     margin-top: 0;
     padding-bottom: 10px;
-    margin-left: 210px;
     padding-right: 0;
-    text-align:left;  
-}        
+    text-align: left;
+}
+
+.coluna_texto p {
+    margin-left: 1px;
+    padding: 0px;
+}
+
+
 
 /* Estilização dos parágrafos */
 p {
@@ -223,51 +239,105 @@ h1 {
 }
 
 
+/* Container principal */
+.social-media-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Duas colunas */
+    grid-template-rows: repeat(2, auto); /* Duas linhas */
+    gap: 10px; /* Espaço entre os itens */
+    margin-left: 150px; /* Ajustar conforme necessário */
+    width: calc(100% - 150px); /* Subtrai a largura da barra lateral */
+    padding-right: 5px; /* Borda lateral direita de 5px */
+}
+
+/* Container principal */
 .social-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Duas colunas */
+    grid-template-rows: repeat(2, auto); /* Duas linhas */
+    gap: 10px; /* Espaço entre os itens */
+    margin-left: 150px; /* Ajustar conforme necessário */
+    width: calc(100% - 150px); /* Subtrai a largura da barra lateral */
+    padding-right: 5px; /* Borda lateral direita de 5px */
+}
+
+/* Estilos para os ícones */
+.instagram-icon,
+.whatsapp-icon {
+    box-sizing: border-box;
     display: flex;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
-    gap: 0px; /* Reduzir o espaço entre os itens */
 }
 
-.social-item {
+/* Ajuste de ícones */
+.instagram-icon img,
+.whatsapp-icon img {
+    width: 50px; /* Ajuste conforme necessário */
+    height: auto;
+}
+
+/* Estilos para os textos */
+.instagram-text,
+.whatsapp-text {
+    box-sizing: border-box;
     text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    color: #000;
 }
 
-#instagram img,
-#whatsapp img {
-    border-radius: 8px; /* Adicionar bordas arredondadas apenas para as imagens */
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Adicionar transição suave */
+/* Configuração das áreas do grid */
+.instagram-icon {
+    grid-column: 1;
+    grid-row: 1;
 }
 
-#instagram, #whatsapp {
-    background-color: black;
-    display: inline-block;
-    text-align: center;
-    margin-left: -310px; /* Ajustar a margem à esquerda */
-    border-radius: 8px; /* Adicionar bordas arredondadas */
-    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5); /* Adicionar sombra mais escura */
+.whatsapp-icon {
+    grid-column: 2;
+    grid-row: 1;
 }
 
-#instagram:hover img,
-#whatsapp:hover img {
-    transform: scale(1.1); /* Aumentar a escala da imagem */
+.instagram-text {
+    grid-column: 1;
+    grid-row: 2;
 }
 
-#instagram:hover, #whatsapp:hover {
-    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.7); /* Alterar sombra quando o mouse passar */
+.whatsapp-text {
+    grid-column: 2;
+    grid-row: 2;
 }
 
-#insta, #zap {
-    color: black;
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 16px;
-    margin-top: 10px; /* Ajuste o espaçamento vertical entre a imagem e o texto */
-    margin-left: 800px; /* Ajustar a margem à esquerda */
+/* Media Queries para ajustar o layout em dispositivos menores */
+@media (max-width: 1000px) {
+    .social-container {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(4, auto); /* Quatro linhas para itens em uma coluna */
+        margin-left: 0; /* Remove a margem esquerda em telas menores */
+        padding-left: 210px; /* Adiciona padding para respeitar a barra lateral fixa */
+        padding-right: 5px; /* Garante borda lateral direita de 5px */
+    }
+
+    .instagram-icon {
+        grid-column: 1;
+        grid-row: 1;
+    }
+
+    .whatsapp-icon {
+        grid-column: 1;
+        grid-row: 2;
+    }
+
+    .instagram-text {
+        grid-column: 1;
+        grid-row: 3;
+    }
+
+    .whatsapp-text {
+        grid-column: 1;
+        grid-row: 4;
+    }
 }
-
-
-
 
 
 /* Estilização do rodapé */

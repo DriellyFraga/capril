@@ -8,6 +8,11 @@
     </head>
     <body>
         <header>
+            <nav role="navigation" aria-label="Menu de Navegação">
+                <a href="#" title="Login">Login</a>
+                <a href="#" title="Admin">Admin</a>
+            </nav>
+            
             <figure id="Imagem_Logo">
                 <img src="img/topo.jpeg" alt="Imagem_Lopo"/>
             </figure>
@@ -17,6 +22,7 @@
                 document.write('<div class="mensagem-boas-vindas">' + nome + ' Bem vindo(a) ao nosso Site Capril Roça de Minas. <br>Você pode ler todo o nosso texto rolando para baixo ou clicar na barra lateral esquerda e ir direto para o tópico específico que deseja.</div>');
             </script>
         </header>
+
         <button class="menu-toggle" onclick="toggleMenu()">Menu</button>
         <aside class="barra_lateral">
             <div class="conteudo">
@@ -72,6 +78,8 @@
                         <img src="img/images.jpeg" alt="Doce de leite em cubos">
                         <p>Descrição: xxxxxxxxxxxxxxxxxxxxxxxxxxxx </p>
                         <p>Valor Unidade: 50,00 </p>
+                        <br><label for="quantidade"> Quantidade</label>
+                        <input type="number" id="quantidade" placeholder="Insira a quantidade">
                     </div>
                 </li>
                 <li>
@@ -80,6 +88,8 @@
                         <img src="img/images.jpeg" alt="Doce de leite em cubos">
                         <p>Descrição: xxxxxxxxxxxxxxxxxxxxxxxxxxxx </p>
                         <p>Valor Unidade: 50,00 </p>
+                        <br><label for="quantidade"> Quantidade</label>
+                        <input type="number" id="quantidade" placeholder="Insira a quantidade">
                     </div>
                 </li>
                 <li>
@@ -88,6 +98,8 @@
                         <img src="img/images.jpeg" alt="Doce de leite em cubos">
                         <p>Descrição: xxxxxxxxxxxxxxxxxxxxxxxxxxxx </p>
                         <p>Valor Unidade: 50,00 </p>
+                        <br><label for="quantidade"> Quantidade</label>
+                        <input type="number" id="quantidade" placeholder="Insira a quantidade">
                     </div>
                 </li>
                 <li>
@@ -96,6 +108,8 @@
                         <img src="img/images.jpeg" alt="Doce de leite em cubos">
                         <p>Descrição: xxxxxxxxxxxxxxxxxxxxxxxxxxxx </p>
                         <p>Valor Unidade: 50,00 </p>
+                        <br><label for="quantidade"> Quantidade</label>
+                        <input type="number" id="quantidade" placeholder="Insira a quantidade">
                     </div>
                 </li>
                 <li>
@@ -104,6 +118,8 @@
                         <img src="img/images.jpeg" alt="Doce de leite em cubos">
                         <p>Descrição: xxxxxxxxxxxxxxxxxxxxxxxxxxxx </p>
                         <p>Valor Unidade: 50,00 </p>
+                        <br><label for="quantidade"> Quantidade</label>
+                        <input type="number" id="quantidade" placeholder="Insira a quantidade">
                     </div>
                 </li>
             </ul>
@@ -185,6 +201,8 @@
                         <img src="img/images.jpeg" alt="Doce de leite em cubos">
                         <p>Descrição: xxxxxxxxxxxxxxxxxxxxxxxxxxxx </p>
                         <p>Valor Unidade: 50,00 </p>
+                        <br><label for="quantidade"> Quantidade</label>
+                        <input type="number" id="quantidade" placeholder="Insira a quantidade">
                     </div>
                 </li>
                 <li>
@@ -193,6 +211,8 @@
                         <img src="img/images.jpeg" alt="Doce de leite em cubos">
                         <p>Descrição: xxxxxxxxxxxxxxxxxxxxxxxxxxxx </p>
                         <p>Valor Unidade: 50,00 </p>
+                        <br><label for="quantidade"> Quantidade</label>
+                        <input type="number" id="quantidade" placeholder="Insira a quantidade">
                     </div>
                 </li>
                 <li>
@@ -201,6 +221,8 @@
                         <img src="img/images.jpeg" alt="Doce de leite em cubos">
                         <p>Descrição: xxxxxxxxxxxxxxxxxxxxxxxxxxxx </p>
                         <p>Valor Unidade: 50,00 </p>
+                        <br><label for="quantidade"> Quantidade</label>
+                        <input type="number" id="quantidade" placeholder="Insira a quantidade">
                     </div>
                 </li>
                 <li>
@@ -209,6 +231,8 @@
                         <img src="img/images.jpeg" alt="Doce de leite em cubos">
                         <p>Descrição: xxxxxxxxxxxxxxxxxxxxxxxxxxxx </p>
                         <p>Valor Unidade: 50,00 </p>
+                        <br><label for="quantidade"> Quantidade</label>
+                        <input type="number" id="quantidade" placeholder="Insira a quantidade">
                     </div>
                 </li>
                 <li>
@@ -216,9 +240,41 @@
                     <div class="subtopico">
                         <img src="img/images.jpeg" alt="Doce de leite em cubos">
                         <p>Descrição: xxxxxxxxxxxxxxxxxxxxxxxxxxxx </p>
-                        <p>Valor Unidade: 50,00 </p>
+                        <p id="valor"> Valor Unidade: R$ 50,00 </p>
+                        <br>
+                        <label for="quantidade"> Quantidade</label>
+                        <input type="number" id="quantidade" placeholder="Insira a quantidade">
+                        <p>Valor Total: R$<span id="total">0,00</span></p>
                     </div>
                 </li>
+                
+                <script type="text/javascript">
+                    document.addEventListener('DOMContentLoaded', function() {
+                        const topicoButton = document.querySelector('.topico');
+                        const subtopicoDiv = document.querySelector('.subtopico');
+                        const quantidadeInput = document.querySelector("#quantidade");
+                        const valorElement = document.querySelector("#valor");
+                        const resultadoElement = document.querySelector("#total");
+            
+                        // Extrair o valor numérico do texto do valor da unidade
+                        const valorUnitario = parseFloat(valorElement.innerText.replace("Valor Unidade: R$ ", "").replace(",", "."));
+            
+                        function calcularResultado() {
+                            const quantidade = parseFloat(quantidadeInput.value) || 0; // Tratar valor não numérico
+                            const total = quantidade * valorUnitario;
+                            resultadoElement.innerText = total.toFixed(2).replace(".", ","); // Formatar o valor total
+                        }
+            
+                        // Adicionar evento de clique para mostrar/ocultar o subtopico
+                        topicoButton.addEventListener('click', function() {
+                            subtopicoDiv.classList.toggle('active');
+                        });
+            
+                        // Adicionar evento de input para calcular o valor total
+                        quantidadeInput.addEventListener("input", calcularResultado);
+                    });
+                </script>
+                
             </ul>
             <script>
                 // Oculta todas as subcategorias

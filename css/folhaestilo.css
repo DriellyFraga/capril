@@ -279,29 +279,35 @@ h1 {
     background-color: #3CB371;
 }
 
-input{
+.subtopico {
+    display: none;
+    padding: 10px;
+    border: 1px solid #ccc;
+    margin-top: 10px;
+}
+
+.subtopico.active {
+    display: block;
+}
+
+input {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 16px;
     padding: 5px;
     border: solid;
     border-radius: 10px;
-    /*
-    padding-left: 1%;*/
 }
 
-label{
+label {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 16px;
     margin-left: 0px;
-
 }
 
-        .subtopico {
-            display: none;
-        }
-        .subtopico.active {
-            display: block;
-        }
+.topico {
+    cursor: pointer;
+}
+
         
 /* Container principal */
 .social-media-grid {

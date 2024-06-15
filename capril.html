@@ -57,7 +57,6 @@
             </section>
              
             <section id="leite-de-cabra_2">
-           
                 <p><b>- Menor Alergenicidade:</b><br>Contendo menos caseína alfa-S1, uma proteína frequentemente associada a alergias ao leite, o leite de cabra é menos propenso a causar reações alérgicas, sendo uma alternativa segura para muitos indivíduos com intolerância ao leite de vaca.</p>
                 <p><b>-Rico em Nutrientes:</b><br>O leite de cabra é uma fonte rica de nutrientes essenciais, como cálcio, fósforo, potássio e vitaminas A e D. Esses nutrientes são fundamentais para a saúde dos ossos, dentes e para o bom funcionamento do sistema imunológico.</br></p>  
                 <p><b>-Propriedades Anti-inflamatórias:</b><br>Estudos indicam que o leite de cabra pode ter propriedades anti-inflamatórias, auxiliando na redução de inflamações intestinais e beneficiando pessoas com condições como a síndrome do intestino irritável (SII).</br></p>
@@ -70,80 +69,61 @@
             </section> 
                 <section id="nossos-produtos"> </section>
                 <h1> Nossos Produtos </h1>
-            
                 <ul id="lista_1">
-                <li>
-                    <button class="topico">Doce de Leite pastoso simples</button>
-                    <div class="subtopico">
-                        <img src="img/images.jpeg" alt="Doce de leite em cubos">
-                        <p>Descrição: xxxxxxxxxxxxxxxxxxxxxxxxxxxx </p>
-                        <p>Valor Unidade: 50,00 </p>
-                        <br><label for="quantidade"> Quantidade</label>
-                        <input type="number" id="quantidade" placeholder="Insira a quantidade">
-                    </div>
-                </li>
-                <li>
-                    <button class="topico">Doce de Leite pastoso com geleia diversos sabores</button>
-                    <div class="subtopico">
-                        <img src="img/images.jpeg" alt="Doce de leite em cubos">
-                        <p>Descrição: xxxxxxxxxxxxxxxxxxxxxxxxxxxx </p>
-                        <p>Valor Unidade: 50,00 </p>
-                        <br><label for="quantidade"> Quantidade</label>
-                        <input type="number" id="quantidade" placeholder="Insira a quantidade">
-                    </div>
-                </li>
-                <li>
-                    <button class="topico">Doce de leite em cubos</button>
-                    <div class="subtopico">
-                        <img src="img/images.jpeg" alt="Doce de leite em cubos">
-                        <p>Descrição: xxxxxxxxxxxxxxxxxxxxxxxxxxxx </p>
-                        <p>Valor Unidade: 50,00 </p>
-                        <br><label for="quantidade"> Quantidade</label>
-                        <input type="number" id="quantidade" placeholder="Insira a quantidade">
-                    </div>
-                </li>
-                <li>
-                    <button class="topico">Queijo Minas</button>
-                    <div class="subtopico">
-                        <img src="img/images.jpeg" alt="Doce de leite em cubos">
-                        <p>Descrição: xxxxxxxxxxxxxxxxxxxxxxxxxxxx </p>
-                        <p>Valor Unidade: 50,00 </p>
-                        <br><label for="quantidade"> Quantidade</label>
-                        <input type="number" id="quantidade" placeholder="Insira a quantidade">
-                    </div>
-                </li>
-                <li>
-                    <button class="topico">Outros</button>
-                    <div class="subtopico">
-                        <img src="img/images.jpeg" alt="Doce de leite em cubos">
-                        <p>Descrição: xxxxxxxxxxxxxxxxxxxxxxxxxxxx </p>
-                        <p>Valor Unidade: 50,00 </p>
-                        <br><label for="quantidade"> Quantidade</label>
-                        <input type="number" id="quantidade" placeholder="Insira a quantidade">
-                    </div>
-                </li>
-            </ul>
-            <script>
-                // Oculta todas as subcategorias
-                document.querySelectorAll('.subtopico').forEach(sub => sub.style.display = 'none');
-        
-                // Adiciona o evento de clique para cada item da lista
-                document.querySelectorAll('#lista_1 li').forEach(item => {
-                    const button = item.querySelector('.topico');
-                    const subtopico = item.querySelector('.subtopico');
-        
-                    // Adiciona o evento de clique ao item da lista
-                    item.addEventListener('click', () => {
-                        const isVisible = subtopico.style.display === 'block';
-        
-                        // Fecha todas as outras subcategorias antes de abrir a atual
-                        document.querySelectorAll('#lista_1 .subtopico').forEach(sub => sub.style.display = 'none');
-                        subtopico.style.display = isVisible ? 'none' : 'block';
-                    });
-                });
-            </script>
-        
-            
+                    <li>
+                        <button class="topico">Doce de Leite pastoso simples</button>
+                        <div class="subtopico">
+                            <p>Descrição: xxxxxxxxxxxxxxxxxxxxxxxxxxxx</p>
+                            <p class="valor-unidade">Valor Unidade: 50,00</p>
+                            <br><label for="quantidade1">Quantidade</label>
+                            <input type="number" id="quantidade1" class="quantidade" placeholder="Insira a quantidade">
+                            <p class="valor-total">Valor Total: R$ <span class="total">0,00</span></p>
+                        </div>
+                    </li>
+                    <li>
+                        <button class="topico">Doce de Leite pastoso com geleia diversos sabores</button>
+                        <div class="subtopico">
+                            <p>Descrição: xxxxxxxxxxxxxxxxxxxxxxxxxxxx</p>
+                            <p class="valor-unidade">Valor Unidade: 50,00</p>
+                            <br><label for="quantidade2">Quantidade</label>
+                            <input type="number" id="quantidade2" class="quantidade" placeholder="Insira a quantidade">
+                            <p class="valor-total">Valor Total: R$ <span class="total">0,00</span></p>
+                        </div>
+                    </li>
+                    <li>
+                        <button class="topico">Doce de leite em cubos</button>
+                        <div class="subtopico">
+                            <p>Descrição: xxxxxxxxxxxxxxxxxxxxxxxxxxxx</p>
+                            <p class="valor-unidade">Valor Unidade: 50,00</p>
+                            <br><label for="quantidade3">Quantidade</label>
+                            <input type="number" id="quantidade3" class="quantidade" placeholder="Insira a quantidade">
+                            <p class="valor-total">Valor Total: R$ <span class="total">0,00</span></p>
+                        </div>
+                    </li>
+                    <li>
+                        <button class="topico">Queijo Minas</button>
+                        <div class="subtopico">
+                            <img src="img/queijo_minas.jpg" alt="Queijo Minas">
+                            <p>Descrição: xxxxxxxxxxxxxxxxxxxxxxxxxxxx</p>
+                            <p class="valor-unidade">Valor Unidade: 50,00</p>
+                            <br><label for="quantidade4">Quantidade</label>
+                            <input type="number" id="quantidade4" class="quantidade" placeholder="Insira a quantidade">
+                            <p class="valor-total">Valor Total: R$ <span class="total">0,00</span></p>
+                        </div>
+                    </li>
+                    <li>
+                        <button class="topico">Outros</button>
+                        <div class="subtopico">
+                            <img src="img/outros.jpg" alt="Outros">
+                            <p>Descrição: xxxxxxxxxxxxxxxxxxxxxxxxxxxx</p>
+                            <p class="valor-unidade">Valor Unidade: 50,00</p>
+                            <br><label for="quantidade5">Quantidade</label>
+                            <input type="number" id="quantidade5" class="quantidade" placeholder="Insira a quantidade">
+                            <p class="valor-total">Valor Total: R$ <span class="total">0,00</span></p>
+                        </div>
+                    </li>
+                </ul>
+
             <p></p>
             <section id="nossos_animais"></section>
             <h1> Nossos Animais </h1>
@@ -199,104 +179,75 @@
                     <button class="topico">Cascão tradicional</button>
                     <div class="subtopico">
                         <img src="img/images.jpeg" alt="Doce de leite em cubos">
-                        <p>Descrição: xxxxxxxxxxxxxxxxxxxxxxxxxxxx </p>
-                        <p>Valor Unidade: 50,00 </p>
-                        <br><label for="quantidade"> Quantidade</label>
-                        <input type="number" id="quantidade" placeholder="Insira a quantidade">
+                        <p>Descrição: xxxxxxxxxxxxxxxxxxxxxxxxxxxx</p>
+                        <p class="valor-unidade">Valor Unidade: 50,00</p>
+                        <br><label for="quantidade6">Quantidade</label>
+                        <input type="number" id="quantidade6" class="quantidade" placeholder="Insira a quantidade">
+                        <p class="valor-total">Valor Total: R$ <span class="total">0,00</span></p>
                     </div>
                 </li>
                 <li>
-                    <button class="topico">Goiabada Cascão sem adção de açucares (somente o açucar da goiaba)</button>
+                    <button class="topico">Goiabada Cascão sem adição de açúcares (somente o açúcar da goiaba)</button>
                     <div class="subtopico">
                         <img src="img/images.jpeg" alt="Doce de leite em cubos">
-                        <p>Descrição: xxxxxxxxxxxxxxxxxxxxxxxxxxxx </p>
-                        <p>Valor Unidade: 50,00 </p>
-                        <br><label for="quantidade"> Quantidade</label>
-                        <input type="number" id="quantidade" placeholder="Insira a quantidade">
+                        <p>Descrição: xxxxxxxxxxxxxxxxxxxxxxxxxxxx</p>
+                        <p class="valor-unidade">Valor Unidade: 50,00</p>
+                        <br><label for="quantidade7">Quantidade</label>
+                        <input type="number" id="quantidade7" class="quantidade" placeholder="Insira a quantidade">
+                        <p class="valor-total">Valor Total: R$ <span class="total">0,00</span></p>
                     </div>
                 </li>
                 <li>
                     <button class="topico">Geleias diversos sabores tradicional</button>
                     <div class="subtopico">
                         <img src="img/images.jpeg" alt="Doce de leite em cubos">
-                        <p>Descrição: xxxxxxxxxxxxxxxxxxxxxxxxxxxx </p>
-                        <p>Valor Unidade: 50,00 </p>
-                        <br><label for="quantidade"> Quantidade</label>
-                        <input type="number" id="quantidade" placeholder="Insira a quantidade">
+                        <p>Descrição: xxxxxxxxxxxxxxxxxxxxxxxxxxxx</p>
+                        <p class="valor-unidade">Valor Unidade: 50,00</p>
+                        <br><label for="quantidade8">Quantidade</label>
+                        <input type="number" id="quantidade8" class="quantidade" placeholder="Insira a quantidade">
+                        <p class="valor-total">Valor Total: R$ <span class="total">0,00</span></p>
                     </div>
                 </li>
                 <li>
-                    <button class="topico">Geleias diversos sabores sem adção de açucares (somente o açucar da respectiva fruta)</button>
+                    <button class="topico">Geleias diversos sabores sem adição de açúcares (somente o açúcar da respectiva fruta)</button>
                     <div class="subtopico">
                         <img src="img/images.jpeg" alt="Doce de leite em cubos">
-                        <p>Descrição: xxxxxxxxxxxxxxxxxxxxxxxxxxxx </p>
-                        <p>Valor Unidade: 50,00 </p>
-                        <br><label for="quantidade"> Quantidade</label>
-                        <input type="number" id="quantidade" placeholder="Insira a quantidade">
+                        <p>Descrição: xxxxxxxxxxxxxxxxxxxxxxxxxxxx</p>
+                        <p class="valor-unidade">Valor Unidade: 50,00</p>
+                        <br><label for="quantidade9">Quantidade</label>
+                        <input type="number" id="quantidade9" class="quantidade" placeholder="Insira a quantidade">
+                        <p class="valor-total">Valor Total: R$ <span class="total">0,00</span></p>
                     </div>
                 </li>
                 <li>
                     <button class="topico">Outros</button>
                     <div class="subtopico">
                         <img src="img/images.jpeg" alt="Doce de leite em cubos">
-                        <p>Descrição: xxxxxxxxxxxxxxxxxxxxxxxxxxxx </p>
-                        <p id="valor"> Valor Unidade: R$ 50,00 </p>
+                        <p>Descrição: xxxxxxxxxxxxxxxxxxxxxxxxxxxx</p>
+                        <p class="valor-unidade">Valor Unidade: 50,00</p>
                         <br>
-                        <label for="quantidade"> Quantidade</label>
-                        <input type="number" id="quantidade" placeholder="Insira a quantidade">
-                        <p>Valor Total: R$<span id="total">0,00</span></p>
+                        <label for="quantidade10">Quantidade</label>
+                        <input type="number" id="quantidade10" class="quantidade" placeholder="Insira a quantidade">
+                        <p class="valor-total">Valor Total: R$ <span class="total">0,00</span></p>
                     </div>
                 </li>
-                
-                <script type="text/javascript">
-                    document.addEventListener('DOMContentLoaded', function() {
-                        const topicoButton = document.querySelector('.topico');
-                        const subtopicoDiv = document.querySelector('.subtopico');
-                        const quantidadeInput = document.querySelector("#quantidade");
-                        const valorElement = document.querySelector("#valor");
-                        const resultadoElement = document.querySelector("#total");
-            
-                        // Extrair o valor numérico do texto do valor da unidade
-                        const valorUnitario = parseFloat(valorElement.innerText.replace("Valor Unidade: R$ ", "").replace(",", "."));
-            
-                        function calcularResultado() {
-                            const quantidade = parseFloat(quantidadeInput.value) || 0; // Tratar valor não numérico
-                            const total = quantidade * valorUnitario;
-                            resultadoElement.innerText = total.toFixed(2).replace(".", ","); // Formatar o valor total
-                        }
-            
-                        // Adicionar evento de clique para mostrar/ocultar o subtopico
-                        topicoButton.addEventListener('click', function() {
-                            subtopicoDiv.classList.toggle('active');
-                        });
-            
-                        // Adicionar evento de input para calcular o valor total
-                        quantidadeInput.addEventListener("input", calcularResultado);
-                    });
-                </script>
-                
             </ul>
+            
+            <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
             <script>
-                // Oculta todas as subcategorias
-                document.querySelectorAll('.subtopico').forEach(sub => sub.style.display = 'none');
-        
-                // Adiciona o evento de clique para cada item da lista
-                document.querySelectorAll('#lista_2 li').forEach(item => {
-                    const button = item.querySelector('.topico');
-                    const subtopico = item.querySelector('.subtopico');
-        
-                    // Adiciona o evento de clique ao item da lista
-                    item.addEventListener('click', () => {
-                        const isVisible = subtopico.style.display === 'block';
-        
-                        // Fecha todas as outras subcategorias antes de abrir a atual
-                        document.querySelectorAll('#lista_2 .subtopico').forEach(sub => sub.style.display = 'none');
-                        subtopico.style.display = isVisible ? 'none' : 'block';
+                $(document).ready(function(){
+                    $('.topico').on('click', function(){
+                        $(this).siblings('.subtopico').toggle();
+                    });
+            
+                    $('.quantidade').on('input', function() {
+                        let quantity = $(this).val();
+                        let price = parseFloat($(this).siblings('.valor-unidade').text().replace('Valor Unidade: ', '').replace(',', '.'));
+                        let total = (quantity * price).toFixed(2).replace('.', ',');
+                        $(this).siblings('.valor-total').find('.total').text(total);
                     });
                 });
             </script>
-        
-        
 
             <section id="fotos-videos"></section>
             <h1> Veja Nossas Fotos e Vídeos </h1>

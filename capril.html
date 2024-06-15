@@ -10,7 +10,7 @@
         <header>
             <nav role="navigation" aria-label="Menu de Navegação">
                 <a href="#" title="Login">Login</a>
-                <a href="#" title="Admin">Admin</a>
+                <a href="administrador.html" title="Admin">Admin</a>
             </nav>
             
             <figure id="Imagem_Logo">
@@ -251,6 +251,43 @@
 
             <section id="fotos-videos"></section>
             <h1> Veja Nossas Fotos e Vídeos </h1>
+            <div class="carousel">
+                <!-- Imagens serão carregadas aqui -->
+            </div>
+            
+            <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+            <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+            <script>
+                $(document).ready(function(){
+                    const accessToken = 'YOUR_ACCESS_TOKEN'; // Substitua pelo seu token de acesso
+            
+                    $.ajax({
+                        url: `https://graph.instagram.com/me/media?fields=id,caption,media_type,media_url,permalink,thumbnail_url,timestamp,username&access_token=${accessToken}`,
+                        type: 'GET',
+                        success: function(response) {
+                            let images = response.data;
+                            let carousel = $('.carousel');
+            
+                            images.forEach(image => {
+                                if (image.media_type === 'IMAGE' || image.media_type === 'CAROUSEL_ALBUM') {
+                                    carousel.append(`<div><a href="${image.permalink}" target="_blank"><img src="${image.media_url}" alt="${image.caption}"/></a></div>`);
+                                }
+                            });
+            
+                            carousel.slick({
+                                dots: true,
+                                infinite: true,
+                                speed: 300,
+                                slidesToShow: 1,
+                                adaptiveHeight: true,
+                            });
+                        },
+                        error: function(err) {
+                            console.log('Error: ', err);
+                        }
+                    });
+                });
+            </script>
             <section id="contato"></section>
             <h1> Entre em Contato Conosco </h1>
             <div class="social-container">
@@ -274,10 +311,15 @@
         </main>    
         </body>
    
-        <footer class= "smarf">
-            <section id= "text_1"> Todos direitos reservados </section>
-            <section id= "text_2">SMARF TECNOLOGIC</section>
-            <section id= "text_3"> 2023</section>
-
+        <footer class="smarf">
+            <a href="https://guizaf.com.br/" target="_blank">
+                <section id="text_1">Todos direitos reservados</section>
+                <section id="text_2">SMARF TECNOLOGIC</section>
+                <section id="text_3">2023</section>
+            </a>
+            <a href="#" target="_blank">
+                <p id="dev_Drielly"> By Drielly Fraga </p>
+            </a>
         </footer>
+        
     </html>

@@ -8,6 +8,32 @@
     </head>
     <body>
         <header>
+            <form id="loginForm" onsubmit="return verificarLogin()">
+                <label for="login">Login:</label>
+                <input type="text" id="login" name="login"><br><br>
+                <label for="senha">Senha:</label>
+                <input type="password" id="senha" name="senha"><br><br>
+                <button type="submit">Entrar</button>
+            </form>
+            
+            <div class="resposta" id="resposta"></div>
+            
+            <script type="text/javascript">
+                function verificarLogin() {
+                    const login = document.getElementById('login').value;
+                    const senha = document.getElementById('senha').value;
+                    const resposta = document.getElementById('resposta');
+            
+                    if (login === "Admin" && senha === "26052023") {
+                        resposta.innerHTML = "Olá Administrador";
+                    } else {
+                        resposta.innerHTML = "Login ou senha errados";
+                    }
+            
+                    // Prevenir o formulário de ser submetido
+                    return false;
+                }
+            </script>
        kkkkk
         </header>
         <nav role="navigation" aria-label="Menu de Navegação">
